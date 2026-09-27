@@ -19,6 +19,13 @@ function calculateSumOfNumbers(elementsName) {
 console.log(calculateSumOfNumbers([50, "50", { son: 50 }, true, 35])); // 85
 
 
+/*
+Traditional API (API)
+Rest API
+GraphQL API
+*/
+
+
 /* Project Standards:
   - Logging standards
   - Naming standards:
