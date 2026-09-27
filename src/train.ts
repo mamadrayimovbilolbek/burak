@@ -1,5 +1,24 @@
 
 
+// O TASK
+
+function calculateSumOfNumbers(elementsName) {
+  let total = 0;
+
+  for (let i = 0; i < elementsName.length; i++) {
+    let currentElement = elementsName[i];
+
+    if (typeof currentElement === "number") {
+      total = total + currentElement;
+    }
+  }
+
+  return total;
+}
+
+console.log(calculateSumOfNumbers([50, "50", { son: 50 }, true, 35])); // 85
+
+
 /* Project Standards:
   - Logging standards
   - Naming standards:
