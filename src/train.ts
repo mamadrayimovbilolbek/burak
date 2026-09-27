@@ -1,16 +1,26 @@
 
 
-// N Task
+/* Project Standards:
+  - Logging standards
+  - Naming standards:
+      function, method, variable => CAMEL
+      class => PASCAL
+      folder, file => KEBAB
+      css => SNAKE
+  - Error handling
+*/
 
-function palindromCheck(word) {
-    const teskariSoz = word.split("").reverse().join("");
-    return word === teskariSoz;
-}
+// // N Task
 
-console.log(palindromCheck("aka")); // true
-console.log(palindromCheck("uka")); // false
-console.log(palindromCheck("booloob")); // true
-console.log(palindromCheck("mexanik")); // false
+// function palindromCheck(word) {
+//     const teskariSoz = word.split("").reverse().join("");
+//     return word === teskariSoz;
+// }
+
+// console.log(palindromCheck("aka")); // true
+// console.log(palindromCheck("uka")); // false
+// console.log(palindromCheck("booloob")); // true
+// console.log(palindromCheck("mexanik")); // false
 
 
 //  M Task 
