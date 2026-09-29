@@ -1,22 +1,35 @@
 
+function objectDanArrayGa(obj) {
+  let a = [];
+
+  for (let key in obj) {
+    a.push([key, obj[key]]);
+  }
+
+  return a;
+}
+
+console.log(objectDanArrayGa({ a: 45, b: 85 }));
+// [["a", 10], ["b", 20]]
+
 
 // O TASK
 
-function calculateSumOfNumbers(elementsName) {
-  let total = 0;
+// function calculateSumOfNumbers(elementsName) {
+//   let total = 0;
 
-  for (let i = 0; i < elementsName.length; i++) {
-    let currentElement = elementsName[i];
+//   for (let i = 0; i < elementsName.length; i++) {
+//     let currentElement = elementsName[i];
 
-    if (typeof currentElement === "number") {
-      total = total + currentElement;
-    }
-  }
+//     if (typeof currentElement === "number") {
+//       total = total + currentElement;
+//     }
+//   }
 
-  return total;
-}
+//   return total;
+// }
 
-console.log(calculateSumOfNumbers([50, "50", { son: 50 }, true, 35])); // 85
+// console.log(calculateSumOfNumbers([50, "50", { son: 50 }, true, 35])); // 85
 
 
 /*
