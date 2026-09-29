@@ -31,3 +31,10 @@ export interface MemberInput {
     memberPhone: string;
     memberPassword: string;
 }
+
+
+export interface LoginInput {
+
+    memberNick: string;
+    memberPassword: string;
+}
