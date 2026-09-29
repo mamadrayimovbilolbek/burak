@@ -1,4 +1,7 @@
 
+
+// P TASK
+
 function objectDanArrayGa(obj) {
   let a = [];
 
@@ -10,7 +13,7 @@ function objectDanArrayGa(obj) {
 }
 
 console.log(objectDanArrayGa({ a: 45, b: 85 }));
-// [["a", 10], ["b", 20]]
+// [["a", 45], ["b", 85]]
 
 
 // O TASK
