@@ -1,19 +1,32 @@
+// Q TASK
 
-
-// P TASK
-
-function objectDanArrayGa(obj) {
-  let a = [];
-
+function hasProperty(obj, propertyName) {
   for (let key in obj) {
-    a.push([key, obj[key]]);
+    if (key === propertyName) {
+      return true;
+    }
   }
-
-  return a;
+  return false;
 }
 
-console.log(objectDanArrayGa({ a: 45, b: 85 }));
-// [["a", 45], ["b", 85]]
+console.log(hasProperty({ name: "Tesla", model: "I4" }, "model")); // true
+console.log(hasProperty({ name: "Tesla", model: "I4" }, "year")); // false
+
+
+// // P TASK
+
+// function objectDanArrayGa(obj) {
+//   let a = [];
+
+//   for (let key in obj) {
+//     a.push([key, obj[key]]);
+//   }
+
+//   return a;
+// }
+
+// console.log(objectDanArrayGa({ a: 45, b: 85 }));
+// // [["a", 45], ["b", 85]]
 
 
 // O TASK
