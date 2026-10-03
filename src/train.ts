@@ -1,16 +1,33 @@
-// Q TASK
 
-function hasProperty(obj, propertyName) {
-  for (let key in obj) {
-    if (key === propertyName) {
-      return true;
-    }
+// R TASK 
+
+function calculate(fig) {
+  const numbers = fig.split("+");
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + Number(numbers[i]);
   }
-  return false;
+
+  return sum;
 }
 
-console.log(hasProperty({ name: "Tesla", model: "I4" }, "model")); // true
-console.log(hasProperty({ name: "Tesla", model: "I4" }, "year")); // false
+console.log(calculate("9+9+9")); // 27
+
+
+// Q TASK
+
+// function hasProperty(obj, propertyName) {
+//   for (let key in obj) {
+//     if (key === propertyName) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// console.log(hasProperty({ name: "Tesla", model: "I4" }, "model")); // true
+// console.log(hasProperty({ name: "Tesla", model: "I4" }, "year")); // false
 
 
 // // P TASK
