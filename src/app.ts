@@ -29,7 +29,7 @@ app.use(
     session({    // SESSIONSni MIDDLEWARE SIFATIDA INTEGRATION QILYAPMIZ ?
         secret: String(process.env.SESSION_SECRET), // OTHER USERS NEVER SHOULD SEE THIS..
         cookie: {
-            maxAge: 1000 * 3600 * 3, // 3hrs  // HOW LONG LASTS OUR SESSIONS(TIME)..
+            maxAge: 1000 * 3600 * 6, // 6hrs  // HOW LONG LASTS OUR SESSIONS(TIME)..
         },
         store: store, // TEPADAGI "cost = store" ning QIYMATINI BERYAPMIZ..
         // Ya'ni bizni session miz hosil bo'lganda, mongodb sessions collectionga murojaat qiladi..  
