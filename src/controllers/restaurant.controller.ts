@@ -44,6 +44,7 @@ restaurantController.processSignup = async (req: Request, res: Response) => {
         const result = await memberService.processSignup(newMember);
         // ToDo  SESSIONS AUTHENTICATION
 
+
         res.send(result);
     } catch (err) {
         console.log("Error, processSignup:", err);
