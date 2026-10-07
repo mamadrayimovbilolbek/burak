@@ -1,18 +1,57 @@
 
-// R TASK 
+// S Task
 
-function calculate(fig) {
-  const numbers = fig.split("+");
-  let sum = 0;
+function missingNumber(numbersList: number[]) {
+  let sortedList = numbersList.sort((a, b) => a - b);
+  console.log(sortedList);
 
-  for (let i = 0; i < numbers.length; i++) {
-    sum = sum + Number(numbers[i]);
+  let counter = 0;
+  let index = 1;
+  let expectedNumber = sortedList[0] + 1;
+
+  while (counter < numbersList.length) {
+    if (expectedNumber !== sortedList[index]) {
+      return expectedNumber;
+    } else {
+      console.log("tekshirilmoqda...");
+      counter++;
+      index++;
+      expectedNumber++;
+    }
   }
-
-  return sum;
 }
 
-console.log(calculate("9+9+9")); // 27
+console.log(missingNumber([9, 0, 7, 3, 4, 6, 1, 8, 2])); // 5
+
+// function missingNumber(numbers) {
+//   const n = numbers.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+
+//   let actualSum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     actualSum = actualSum + numbers[i];
+//   }
+
+//   return expectedSum - actualSum;
+// }
+
+// console.log(missingNumber([8, 0, 6])); // 2
+
+
+// R TASK 
+
+// function calculate(fig) {
+//   const numbers = fig.split("+");
+//   let sum = 0;
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum = sum + Number(numbers[i]);
+//   }
+
+//   return sum;
+// }
+
+// console.log(calculate("9+9+9")); // 27
 
 
 // Q TASK
