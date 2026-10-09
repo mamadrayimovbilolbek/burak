@@ -1,27 +1,36 @@
 
+// T Task
+
+const mergeSortedArrays = (list1: number[], list2: number[]) =>
+  list1.concat(list2).sort((a, b) => a - b);
+
+// Testing
+console.log(mergeSortedArrays([2, 5, 9, 14], [1, 5, 8, 20, 25]));
+// [1, 2, 5, 5, 8, 9, 14, 20, 25]
+
 // S Task
 
-function missingNumber(numbersList: number[]) {
-  let sortedList = numbersList.sort((a, b) => a - b);
-  console.log(sortedList);
+// function missingNumber(numbersList: number[]) {
+//   let sortedList = numbersList.sort((a, b) => a - b);
+//   console.log(sortedList);
 
-  let counter = 0;
-  let index = 1;
-  let expectedNumber = sortedList[0] + 1;
+//   let counter = 0;
+//   let index = 1;
+//   let expectedNumber = sortedList[0] + 1;
 
-  while (counter < numbersList.length) {
-    if (expectedNumber !== sortedList[index]) {
-      return expectedNumber;
-    } else {
-      console.log("tekshirilmoqda...");
-      counter++;
-      index++;
-      expectedNumber++;
-    }
-  }
-}
+//   while (counter < numbersList.length) {
+//     if (expectedNumber !== sortedList[index]) {
+//       return expectedNumber;
+//     } else {
+//       console.log("tekshirilmoqda...");
+//       counter++;
+//       index++;
+//       expectedNumber++;
+//     }
+//   }
+// }
 
-console.log(missingNumber([9, 0, 7, 3, 4, 6, 1, 8, 2])); // 5
+// console.log(missingNumber([9, 0, 7, 3, 4, 6, 1, 8, 2])); // 5
 
 // function missingNumber(numbers) {
 //   const n = numbers.length;
