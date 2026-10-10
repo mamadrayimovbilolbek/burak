@@ -1,12 +1,30 @@
 
-// T Task
 
-const mergeSortedArrays = (list1: number[], list2: number[]) =>
-  list1.concat(list2).sort((a, b) => a - b);
+function sumOdds(abc) {
+  let toqSonlarSoni = 0;
 
-// Testing
-console.log(mergeSortedArrays([2, 5, 9, 14], [1, 5, 8, 20, 25]));
-// [1, 2, 5, 5, 8, 9, 14, 20, 25]
+  for (let son = 0; son < abc; son++) {
+    if (son % 2 !== 0) {
+      toqSonlarSoni++;
+    }
+  }
+
+  return toqSonlarSoni;
+}
+
+console.log(sumOdds(20));
+console.log(sumOdds(200));
+console.log(sumOdds(300));
+
+
+// // T Task
+
+// const mergeSortedArrays = (list1: number[], list2: number[]) =>
+//   list1.concat(list2).sort((a, b) => a - b);
+
+// // Testing
+// console.log(mergeSortedArrays([2, 5, 9, 14], [1, 5, 8, 20, 25]));
+// // [1, 2, 5, 5, 8, 9, 14, 20, 25]
 
 // S Task
 
