@@ -1,20 +1,22 @@
+
+
 //  U Task
 
 function sumOdds(abc) {
-  let toqSonlarSoni = 0;
+  let toqSonlar = 0;
 
   for (let son = 0; son < abc; son++) {
     if (son % 2 !== 0) {
-      toqSonlarSoni++;
+      toqSonlar++;
     }
   }
 
-  return toqSonlarSoni;
+  return toqSonlar;
 }
 
-console.log(sumOdds(20));
-console.log(sumOdds(200));
-console.log(sumOdds(300));
+console.log(sumOdds(20)); // 10
+console.log(sumOdds(200)); // 100
+console.log(sumOdds(300)); // 150
 
 
 // // T Task
