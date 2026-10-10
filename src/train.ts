@@ -1,4 +1,4 @@
-
+//  U Task
 
 function sumOdds(abc) {
   let toqSonlarSoni = 0;
