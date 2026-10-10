@@ -35,6 +35,18 @@ export interface MemberInput {
     memberPassword: string;
 }
 
+export interface MemberUpdateInput {
+
+    _id: ObjectId;
+    memberStatus?: MemberStatus;
+    memberAddress?: string;
+    memberDesc?: string;
+    memberImage?: string;
+    memberNick?: string;
+    memberPhone?: string;
+    memberPassword?: string;
+}
+
 
 export interface LoginInput {
 
