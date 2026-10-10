@@ -35,7 +35,7 @@ app.use(
         store: store, // TEPADAGI "cost = store" ning QIYMATINI BERYAPMIZ..
         // Ya'ni bizni session miz hosil bo'lganda, mongodb sessions collectionga murojaat qiladi..  
         resave: true, // true bolsa => oxirgi kirgandan kn 3soat mobaynida..  11:00 - 14:00 => reentered 12:30   ==> 15:30 
-        saveUninitialized: true,
+        saveUninitialized: true, // har qanday requestga DB da session yaratadi..
     })
 );
 
@@ -43,7 +43,7 @@ app.use(function (req, res, next) {
     const sessionInstance = req.session as T;
     res.locals.member = sessionInstance.member;
     next();
-})
+});
 
 /** 3-Views **/
 app.set("views", path.join(__dirname, "views"));
