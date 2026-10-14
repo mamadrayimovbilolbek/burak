@@ -1,22 +1,44 @@
 
 
-//  U Task
+// V Task
+function countLetters(text) {
+  const letterCount = {};
 
-function sumOdds(abc) {
-  let toqSonlar = 0;
+  for (let i = 0; i < text.length; i++) {
+    const letter = text[i];
 
-  for (let son = 0; son < abc; son++) {
-    if (son % 2 !== 0) {
-      toqSonlar++;
+    if (letterCount[letter] === undefined) {
+      letterCount[letter] = 1;
+    } else {
+      letterCount[letter]++;
     }
   }
 
-  return toqSonlar;
+  return letterCount;
 }
 
-console.log(sumOdds(20)); // 10
-console.log(sumOdds(200)); // 100
-console.log(sumOdds(300)); // 150
+// Testing
+console.log(countLetters("banana")); // {b: 1, a: 3, n: 2}
+console.log(countLetters("devex.academy")); // { d: 2, e: 3, v: 1, x: 1, '.': 1, a: 2, c: 1, m: 1, y: 1 }
+
+
+//  U Task
+
+// function sumOdds(abc) {
+//   let toqSonlar = 0;
+
+//   for (let son = 0; son < abc; son++) {
+//     if (son % 2 !== 0) {
+//       toqSonlar++;
+//     }
+//   }
+
+//   return toqSonlar;
+// }
+
+// console.log(sumOdds(20)); // 10
+// console.log(sumOdds(200)); // 100
+// console.log(sumOdds(300)); // 150
 
 
 // // T Task
