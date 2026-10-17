@@ -57,4 +57,4 @@ function validateSignupForm() {
         alert("Please insert restaurant image!");
         return false;
     }
-}
+} 
