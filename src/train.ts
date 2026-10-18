@@ -1,25 +1,38 @@
 
 
-// V Task
-function countLetters(text) {
-  const letterCount = {};
-
-  for (let i = 0; i < text.length; i++) {
-    const letter = text[i];
-
-    if (letterCount[letter] === undefined) {
-      letterCount[letter] = 1;
-    } else {
-      letterCount[letter]++;
-    }
+// W Task
+function chunkArray(array, size) {
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
   }
-
-  return letterCount;
+  return result;
 }
 
-// Testing
-console.log(countLetters("banana")); // {b: 1, a: 3, n: 2}
-console.log(countLetters("devex.academy")); // { d: 2, e: 3, v: 1, x: 1, '.': 1, a: 2, c: 1, m: 1, y: 1 }
+console.log(chunkArray([10, 20, 30, 40, 500, 600, 700, 800, 900, 1000], 2));
+// [ [ 10, 20 ], [ 30, 40 ], [ 500, 600 ], [ 700, 800 ], [ 900, 1000 ] ]
+
+
+// // V Task
+// function countLetters(text) {
+//   const letterCount = {};
+
+//   for (let i = 0; i < text.length; i++) {
+//     const letter = text[i];
+
+//     if (letterCount[letter] === undefined) {
+//       letterCount[letter] = 1;
+//     } else {
+//       letterCount[letter]++;
+//     }
+//   }
+
+//   return letterCount;
+// }
+
+// // Testing
+// console.log(countLetters("banana")); // {b: 1, a: 3, n: 2}
+// console.log(countLetters("devex.academy")); // { d: 2, e: 3, v: 1, x: 1, '.': 1, a: 2, c: 1, m: 1, y: 1 }
 
 
 //  U Task
