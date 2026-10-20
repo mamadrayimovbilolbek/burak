@@ -1,15 +1,53 @@
 
 
-// W Task
-function chunkArray(array, size) {
-  const result = [];
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
+// X Task
+function countOccurrences(obj: object, str: string): number {
+  let count = 0;
+
+  for (const key in obj) {
+    if (key === str) {
+      count++;
+    }
+
+    const value = (obj as any)[key];
+
+    if (value !== null && typeof value === "object") {
+      count += countOccurrences(value, str);
+    }
   }
-  return result;
+
+  return count;
 }
 
-console.log(chunkArray([10, 20, 30, 40, 500, 600, 700, 800, 900, 1000], 2));
+console.log(
+  countOccurrences(
+    {
+      name: "BMW",
+      engine: {
+        name: "V8",
+        details: {
+          name: "Twin Turbo",
+        },
+      },
+      color: "black",
+    },
+    "name"
+  )
+);
+
+// Natija: 3
+
+
+// // W Task
+// function chunkArray(array, size) {
+//   const result = [];
+//   for (let i = 0; i < array.length; i += size) {
+//     result.push(array.slice(i, i + size));
+//   }
+//   return result;
+// }
+
+// console.log(chunkArray([10, 20, 30, 40, 500, 600, 700, 800, 900, 1000], 2));
 // [ [ 10, 20 ], [ 30, 40 ], [ 500, 600 ], [ 700, 800 ], [ 900, 1000 ] ]
 
 
