@@ -1,39 +1,54 @@
 
+// Y TASK
 
-// X Task
-function countOccurrences(obj: object, str: string): number {
-  let count = 0;
-
-  for (const key in obj) {
-    if (key === str) {
-      count++;
-    }
-
-    const value = (obj as any)[key];
-
-    if (value !== null && typeof value === "object") {
-      count += countOccurrences(value, str);
-    }
-  }
-
-  return count;
+function getCommonItems(firstList, secondList) {
+  const secondSet = new Set(secondList);
+  const common = firstList.filter((item) => secondSet.has(item));
+  return [...new Set(common)];
 }
 
-console.log(
-  countOccurrences(
-    {
-      name: "BMW",
-      engine: {
-        name: "V8",
-        details: {
-          name: "Twin Turbo",
-        },
-      },
-      color: "black",
-    },
-    "name"
-  )
-);
+console.log(getCommonItems([10, 20, 30, 40], [40, 50, 20, 60]));
+// [20, 40]
+
+console.log(getCommonItems(["a", "b", "c", "b"], ["b", "z", "a"]));
+// ["a", "b"]
+
+
+
+// // X Task
+// function countOccurrences(obj: object, str: string): number {
+//   let count = 0;
+
+//   for (const key in obj) {
+//     if (key === str) {
+//       count++;
+//     }
+
+//     const value = (obj as any)[key];
+
+//     if (value !== null && typeof value === "object") {
+//       count += countOccurrences(value, str);
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(
+//   countOccurrences(
+//     {
+//       name: "BMW",
+//       engine: {
+//         name: "V8",
+//         details: {
+//           name: "Twin Turbo",
+//         },
+//       },
+//       color: "black",
+//     },
+//     "name"
+//   )
+// );
 
 // Natija: 3
 
