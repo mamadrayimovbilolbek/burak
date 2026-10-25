@@ -1,17 +1,35 @@
 
-// Y TASK
+// Z TASK
 
-function getCommonItems(firstList, secondList) {
-  const secondSet = new Set(secondList);
-  const common = firstList.filter((item) => secondSet.has(item));
-  return [...new Set(common)];
+function sumEvenNumbers(numbers) {
+  return numbers
+    .filter((num) => num % 2 === 0)
+    .reduce((sum, num) => sum + num, 0);
 }
 
-console.log(getCommonItems([10, 20, 30, 40], [40, 50, 20, 60]));
+console.log(sumEvenNumbers([1, 2, 3]));
+// 2
+
+console.log(sumEvenNumbers([4, 7, 10, 15, 6]));
+// 20
+
+console.log(sumEvenNumbers([1, 3, 5]));
+// 0
+
+
+// Y TASK
+
+// function getCommonItems(firstList, secondList) {
+//   const secondSet = new Set(secondList);
+//   const common = firstList.filter((item) => secondSet.has(item));
+//   return [...new Set(common)];
+// }
+
+// console.log(getCommonItems([10, 20, 30, 40], [40, 50, 20, 60]));
 // [20, 40]
 
-console.log(getCommonItems(["a", "b", "c", "b"], ["b", "z", "a"]));
-// ["a", "b"]
+// console.log(getCommonItems(["a", "b", "c", "b"], ["b", "z", "a"]));
+//  ["a", "b"]
 
 
 
