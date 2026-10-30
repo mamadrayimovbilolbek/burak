@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-import router from "./routers";
+import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
