@@ -7,6 +7,7 @@ import { T } from "../libs/types/common";
 import { ObjectId } from "mongoose";
 import { ViewGroup } from "../libs/enums/view.enum";
 import { ViewInput } from "../libs/types/view";
+import ViewService from "./View.service";
 
 class ProductService {
     private readonly productModel;
@@ -14,6 +15,7 @@ class ProductService {
 
     constructor() {
         this.productModel = ProductModel;
+        this.viewService = new ViewService();
     }
 
     /** SPA */
