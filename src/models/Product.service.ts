@@ -5,9 +5,12 @@ import { shapeIntoMongooseObjectId } from "../libs/config";
 import { ProductStatus } from "../libs/enums/product.enums";
 import { T } from "../libs/types/common";
 import { ObjectId } from "mongoose";
+import { ViewGroup } from "../libs/enums/view.enum";
+import { ViewInput } from "../libs/types/view";
 
 class ProductService {
     private readonly productModel;
+    viewService: any;
 
     constructor() {
         this.productModel = ProductModel;
@@ -57,6 +60,32 @@ class ProductService {
         if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
         // TODO If authenticated user => first => view log creation
+        if (memberId) {
+            // Check Existence
+            const input: ViewInput = {
+                memberId: memberId,
+                viewRefId: productId,
+                viewGroup: ViewGroup.PRODUCT,
+            };
+            const existView = await this.viewService.checkViewExistence(input);
+
+            console.log("existView:", existView);
+            if (!existView) {
+                // Insert View
+                console.log("PLANNING TO INSERT NEW VIEW");
+                await this.viewService.insertMemberView(input);
+
+                // Increase Counts
+                result = await this.productModel
+                    .findByIdAndUpdate(
+                        productId,
+                        { $inc: { productViews: +1 } },
+                        { new: true }
+                    )
+                    .exec();
+            }
+        }
+
 
         return result;
     }
