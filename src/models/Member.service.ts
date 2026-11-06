@@ -92,7 +92,7 @@ class MemberService {
         input: MemberUpdateInput
     ): Promise<Member> {
         const memberId = shapeIntoMongooseObjectId(member._id);
-        const result = this.memberModel
+        const result = await this.memberModel
             .findOneAndUpdate({ _id: memberId }, input, { new: true })
             .exec();
         if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
@@ -109,7 +109,7 @@ class MemberService {
             .sort({ memberPoints: -1 })
             .limit(4)
             .exec();
-        if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+        if (!result.length) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
         return result;
     }

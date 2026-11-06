@@ -23,8 +23,8 @@ const app = express();
 console.log("__dirname:", __dirname);
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static("./uploads"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // HTML forma tarjimoni. extended: true ichma-ich ma’lumotlarni ham o’qiy olishni bildiradi.
+app.use(express.json());  // JSON tarjimoni
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 
