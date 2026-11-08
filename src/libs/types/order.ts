@@ -22,7 +22,7 @@ export interface Order {
 
   // from aggregation 
   orderItems: OrderItem[];
-  productData: ProductData[];
+  productData: Product[];
 }
 
 export interface OrderItemInput {
@@ -35,5 +35,10 @@ export interface OrderItemInput {
 export interface OrderInquiry {
   page: number;
   limit: number;
+  orderStatus: OrderStatus;
+}
+
+export interface OrderUpdateInput {
+  orderId: string;
   orderStatus: OrderStatus;
 }
