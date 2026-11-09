@@ -4,7 +4,7 @@ import { Response } from "express";
 import Errors, { HttpCode } from "../libs/Errors";
 import OrderService from "../models/Order.service";
 import { OrderStatus } from "../libs/enums/order.enum";
-import { OrderInquiry } from "../libs/types/order";
+import { OrderInquiry, OrderUpdateInput } from "../libs/types/order";
 
 const orderService = new OrderService();
 
